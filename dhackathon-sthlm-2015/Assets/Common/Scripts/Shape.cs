@@ -6,6 +6,7 @@ public class Shape : MonoBehaviour
 
     private Vector3[] m_vertices;
     private float[] m_offsets;
+
     private LinePrinter.DrawObject m_drawObject;
     private LinePrinter m_printer;
 
@@ -30,6 +31,9 @@ public class Shape : MonoBehaviour
 
     private void Update ()
     {
+        if(m_vertices.Length <= 0)
+            return;
+
         var scale = Matrix4x4.Scale(transform.localScale);
         var rotation = transform.rotation;
         var position = transform.position;
@@ -67,11 +71,15 @@ public class Shape : MonoBehaviour
 
     private void Triangle()
     {
-
+        if(m_vertices.Length <= 0)
+            return;
     }
 
     private void Circle()
     {
+        if(m_vertices.Length <= 0)
+            return;
+
         var pointsInCircle = m_vertices.Length;
         for (int i = 0; i < pointsInCircle; ++i)
         {
@@ -83,6 +91,18 @@ public class Shape : MonoBehaviour
 
     private void Square()
     {
-    
+        if(m_vertices.Length <= 0)
+            return;
+
+        var verticesPerSide = m_vertices.Length / 4;
+        var space = 1f / verticesPerSide;
+
+        for(int i = 0; i < verticesPerSide; ++i)
+        {
+            m_vertices[i] = new Vector3(-0.5f + i * space, 0.5f, transform.position.z);
+            m_vertices[i + verticesPerSide] = new Vector3(0.5f, 0.5f - i*space, transform.position.z);
+            m_vertices[i + verticesPerSide * 2] = new Vector3(0.5f - i * space,-0.5f, transform.position.z);
+            m_vertices[i + verticesPerSide * 3] = new Vector3(-0.5f, -0.5f + i * space, transform.position.z);
+        }
     }
 }
