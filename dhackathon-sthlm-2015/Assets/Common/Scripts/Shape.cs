@@ -12,24 +12,34 @@ public class Shape : MonoBehaviour
 
     private Vector3[] m_originalVertices;
     private Vector3[] m_customVertices;
-    public Type GeometryType = Type.InvalidType;
-    public int Resolution;
+    public Type m_geometryType = Type.InvalidType;
+    public int m_resolution;
 
     private void Start ()
     {
-        m_originalVertices = new Vector3[Resolution];
-        m_customVertices = new Vector3[Resolution];
+        m_originalVertices = new Vector3[m_resolution];
+        m_customVertices = new Vector3[m_resolution];
         GenerateShape();
     }
 
     private void Update ()
     {
+        var scale = Matrix4x4.Scale(transform.localScale);
+        var rotation = transform.rotation;
+        var position = transform.position;
 
+        // TODO: Try make this parallell. :)
+        for (int i = 0; i < m_originalVertices.Length; ++i)
+        {
+            m_customVertices[i] = scale * m_originalVertices[i];
+            m_customVertices[i] = rotation * m_customVertices[i];
+            m_customVertices[i] += position;
+        }
     }
 
     private void GenerateShape() 
     {
-        switch(GeometryType) 
+        switch(m_geometryType) 
         {
             case Type.Circle:
                 Circle();
@@ -48,7 +58,7 @@ public class Shape : MonoBehaviour
 
     private void Triangle()
     {
-    
+
     }
 
     private void Circle()
