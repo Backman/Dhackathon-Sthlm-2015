@@ -2,23 +2,21 @@
 
 public class Shape : MonoBehaviour
 {
-    public enum Type 
-    {
-        InvalidType,
-        Circle,
-        Square,
-        Triangle,
-    };
+    private const float Tau = Mathf.PI * 2;
 
-    private Vector3[] m_originalVertices;
-    private Vector3[] m_customVertices;
-    public Type m_geometryType = Type.InvalidType;
-    public int m_resolution;
+    private Vector3[] m_vertices;
+    private LinePrinter.DrawObject m_drawObject;
+    private LinePrinter m_printer;
+
+    public GeometryType m_geometryType = GeometryType.Circle;
+    public int m_resolution = 1024;
+    public Color m_color = Color.white;
 
     private void Start ()
     {
-        m_originalVertices = new Vector3[m_resolution];
-        m_customVertices = new Vector3[m_resolution];
+        m_printer = Camera.main.GetComponent<LinePrinter>();
+        m_vertices = new Vector3[m_resolution];
+        m_drawObject = new LinePrinter.DrawObject(new Vector3[m_resolution], m_color);
         GenerateShape();
     }
 
@@ -29,25 +27,28 @@ public class Shape : MonoBehaviour
         var position = transform.position;
 
         // TODO: Try make this parallell. :)
-        for (int i = 0; i < m_originalVertices.Length; ++i)
+        for (int i = 0; i < m_vertices.Length; ++i)
         {
-            m_customVertices[i] = scale * m_originalVertices[i];
-            m_customVertices[i] = rotation * m_customVertices[i];
-            m_customVertices[i] += position;
+            m_drawObject.List[i] = scale * m_vertices[i];
+            m_drawObject.List[i] = rotation * m_drawObject.List[i];
+            m_drawObject.List[i] += position;
         }
+
+        // Enqueue this drawObject to camera's PostRenderer
+        m_printer.Objects.Enqueue(m_drawObject);
     }
 
     private void GenerateShape() 
     {
         switch(m_geometryType) 
         {
-            case Type.Circle:
+            case GeometryType.Circle:
                 Circle();
                 break;
-            case Type.Square:
+            case GeometryType.Square:
                 Square();
                 break;
-            case Type.Triangle:
+            case GeometryType.Triangle:
                 Triangle();
                 break;
             default:
@@ -63,7 +64,12 @@ public class Shape : MonoBehaviour
 
     private void Circle()
     {
-        
+        var pointsInCircle = m_vertices.Length;
+        for (int i = 0; i < pointsInCircle; ++i)
+        {
+            float theta = Tau * i / pointsInCircle;
+            m_vertices[i] = new Vector3(Mathf.Cos(theta), Mathf.Sin(theta), transform.position.z);
+        }
     }
 
     private void Square()
