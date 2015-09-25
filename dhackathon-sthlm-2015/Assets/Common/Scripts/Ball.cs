@@ -1,21 +1,26 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour
 {
     [SerializeField]
     private float _baseSpeed;
-	
+
+    public float PushbackForce = 10f;
+
     private Rigidbody2D _rb;
     private TrailRenderer _trail;
     private float _currentSpeed;
-    
-	public Vector2 Velocity { get { return _rb.velocity; } }
-	
+
+    private Vector2 _velocity;
+
+    public Vector2 Velocity { get { return _rb.velocity; } }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _trail = GetComponent<TrailRenderer>();
-        _trail.sortingOrder = -1;
+        //  _trail = GetComponent<TrailRenderer>();
+        //  _trail.sortingOrder = -1;
 
         Random.seed = (int)System.DateTime.Now.Ticks;
         float x = Random.value;
@@ -23,27 +28,20 @@ public class Ball : MonoBehaviour
 
         _currentSpeed = _baseSpeed;
         _rb.AddForce(new Vector2(x, y) * _currentSpeed, ForceMode2D.Impulse);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddSpeed(1f);
-        }
-
-        Debug.Log(Velocity.magnitude);
+        _velocity = _rb.velocity;
     }
 
     private void FixedUpdate()
     {
+        if (Mathf.Abs(_rb.velocity.sqrMagnitude - _velocity.sqrMagnitude) > 0.001f)
+        {
+            _rb.velocity = _velocity;
+        }
     }
 
-    public void AddSpeed(float percent)
+    public void MultiplySpeed(Vector3 dir, float multiplier)
     {
-        Vector2 dir = _rb.velocity.normalized;
-        _rb.velocity = Vector2.zero;
-        _currentSpeed = _currentSpeed + _baseSpeed * percent;
-        _rb.AddForce(dir * _currentSpeed, ForceMode2D.Impulse);
+        Vector3 newVel = dir * _velocity.magnitude * multiplier;
+        _velocity = newVel;
     }
 }
