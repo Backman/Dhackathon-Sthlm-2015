@@ -4,7 +4,7 @@ public class Shape : MonoBehaviour
 {
     private const float Tau = Mathf.PI * 2;
 
-    public Vector3[] m_vertices;
+    private Vector3[] m_vertices;
     private LinePrinter.DrawObject m_drawObject;
     private LinePrinter m_printer;
 
@@ -64,6 +64,26 @@ public class Shape : MonoBehaviour
     {
         if(m_vertices.Length <= 0)
             return;
+
+        // 0.75 = 1^2 - (1 / 2)^2
+        var height = Mathf.Sqrt(0.75f);
+        var verticesPerSide = m_vertices.Length / 3;
+        var space = 1f / verticesPerSide;
+        var right = new Vector3(0,-1,0);
+        var offset = new Vector3(0, -height / 2, 0);
+        
+        var dir1 = new Vector3(0, height, 0) - new Vector3(-0.5f,0,0);
+        var dir2 = new Vector3(0.5f, 0, 0) - new Vector3(0,height,0);
+
+
+        for(int i = 0; i < verticesPerSide; ++i)
+        {
+            m_vertices[i] = new Vector3(0.5f - i * space, 0, transform.position.z) + offset;
+            m_vertices[i + verticesPerSide] = dir1 * i * space + new Vector3(-0.5f, 0, transform.position.z) + offset;
+            m_vertices[i + verticesPerSide * 2] = dir2 * i * space + new Vector3(0, height, transform.position.z) + offset;
+        }
+
+        m_vertices[m_vertices.Length-1] = m_vertices[0];
     }
 
     private void Circle()
