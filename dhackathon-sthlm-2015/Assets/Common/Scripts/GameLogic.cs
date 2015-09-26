@@ -103,4 +103,9 @@ public class GameLogic : MonoBehaviour
     {
         return _currentTileDropSetting < _config.TileDropSettings.Length;
     }
+
+    void OnDestroy()
+    {
+        Instance = null;
+    }
 }
