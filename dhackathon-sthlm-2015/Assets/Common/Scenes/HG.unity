@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_vertices: []
-  m_geometryType: 3
+  m_geometryType: 4
   m_resolution: 256
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1194617502

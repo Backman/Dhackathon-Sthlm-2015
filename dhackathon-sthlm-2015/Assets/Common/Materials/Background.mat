@@ -191,7 +191,7 @@ Material:
       data:
         first:
           name: _col2
-        second: {r: 1, g: 1, b: 0, a: 1}
+        second: {r: .0882353187, g: .0882353187, b: .0882353187, a: 1}
       data:
         first:
           name: _col3
