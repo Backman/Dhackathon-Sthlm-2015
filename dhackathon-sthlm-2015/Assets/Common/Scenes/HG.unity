@@ -267,8 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f3fec1dad5974ba0a9876ffaab235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_geometryType: 3
-  m_resolution: 1024
+  m_vertices: []
+  m_geometryType: 4
+  m_resolution: 256
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1194617502
 Transform:

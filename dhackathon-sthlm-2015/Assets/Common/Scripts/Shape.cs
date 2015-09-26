@@ -2,8 +2,10 @@
 
 public class Shape : MonoBehaviour
 {
-    private const float Tau = Mathf.PI * 2;
+    [SerializeField]
+    private float m_distortFactor = 1.0f;
 
+    private const float Tau = Mathf.PI * 2;
     private Vector3[] m_vertices;
     private float[] m_offsets;
 
@@ -28,6 +30,9 @@ public class Shape : MonoBehaviour
     {
         if (offsets.Length != m_resolution) return;
         m_offsets = offsets;
+
+        for(int i = 0; i < m_offsets.Length; ++i)
+            m_offsets[i] *= m_distortFactor;
     }
 
     private void Update ()
@@ -40,8 +45,8 @@ public class Shape : MonoBehaviour
             m_prevType = m_geometryType;
             GenerateShape();
         }
-
-        var scale = Matrix4x4.Scale(transform.localScale);
+        
+        var scale = Matrix4x4.Scale(transform.lossyScale);
         var rotation = transform.rotation;
         var position = transform.position;
 
@@ -71,9 +76,22 @@ public class Shape : MonoBehaviour
             case GeometryType.Triangle:
                 Triangle();
                 break;
+            case GeometryType.Line:
+                Line();
+                break;
             default:
                 Debug.LogError("Error in Shape.cs - Geometry shape unknown.");
                 break;
+        }
+    }
+
+    private void Line()
+    {
+        var space = 1f / m_vertices.Length;
+
+        for(int i = 0; i < m_vertices.Length; ++i)
+        {
+            m_vertices[i] = new Vector3(-0.5f + i * space, 0, transform.position.z);
         }
     }
 
