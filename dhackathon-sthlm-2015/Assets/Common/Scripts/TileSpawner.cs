@@ -7,10 +7,15 @@ public class TileSpawner : MonoBehaviour
     [SerializeField]
     private TileSpawnerConfig _config;
 
+    [SerializeField]
+    private AudioClip _build;
+
+    private AudioSource _audioSource;
     private Transform _tileParent;
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         Spawn();
     }
 
@@ -73,9 +78,16 @@ public class TileSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(_config.TimeUntilTileTweening);
 
+
         foreach (var tile in tileList)
         {
             tile.MoveToGoalPosition(_config.TileTweenDuration, _config.TileTweeningCurve, Random.Range(_config.TileTweenWaitInterval.x, _config.TileTweenWaitInterval.y));
+        }
+
+        if (_audioSource != null && _build != null)
+        {
+            _audioSource.clip = _build;
+            _audioSource.PlayDelayed(_config.TileTweenWaitInterval.x);
         }
 
         yield return new WaitForSeconds(_config.TileTweenDuration + _config.TileTweenWaitInterval.y);
