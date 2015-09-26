@@ -48,7 +48,7 @@ public class Shield : MonoBehaviour
         if (!_bashState.Valid)
         {
             Vector2 dir = _character.transform.position - ball.transform.position;
-            _character.Knockback(dir.normalized, ball.Velocity.magnitude * 0.1f);
+            _character.Knockback(dir.normalized, ball.ShieldKnockbackLength);
 
             if(_audioSource != null && _bounce != null)
             {

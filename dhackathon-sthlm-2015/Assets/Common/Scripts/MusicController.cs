@@ -35,9 +35,9 @@ public class MusicController : MonoBehaviour
 
     private void Update()
     {
-        Transition += _fadeSpeed * Time.deltaTime;
-        Transition = Mathf.Clamp01(Transition);
-        _filter.cutoffFrequency = Mathf.Lerp(_minValue, _maxValue, Transition);
+        //  Transition += _fadeSpeed * Time.deltaTime;
+        //  Transition = Mathf.Clamp01(Transition);
+        //  _filter.cutoffFrequency = Mathf.Lerp(_minValue, _maxValue, Transition);
     }
 
     public void StartFadeIn(float duration)
@@ -81,6 +81,8 @@ public class MusicController : MonoBehaviour
         	_filter.cutoffFrequency = lowPassValue;
             yield return null;
         }
+
+        _filter.cutoffFrequency = _maxValue;
 
         _fadingIn = false;
     }

@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     private bool _isAlive = true;
 	
 	public bool IsAlive { get { return _isAlive; } }
+	public bool IsBashing { get; set; }
 
     private void Awake()
     {
@@ -69,6 +70,18 @@ public class Character : MonoBehaviour
 
         Vector3 pos = _rb.position;
         _rb.position = new Vector3(Mathf.Clamp(pos.x, -82, 82), Mathf.Clamp(pos.y, -42, 42), 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var ball = collision.gameObject.GetComponent<Ball>();
+        if (IsBashing || !ball)
+        {
+            return;
+        }
+		
+        var dir = transform.position - ball.transform.position;
+        Knockback(dir.normalized, ball.CharacterKnockbackLength);
     }
 
     public void TakeDamage(int amount)
@@ -158,7 +171,7 @@ public class Character : MonoBehaviour
         _knockbackState.Direction = dir;
         _knockbackState.Length = length;
         _knockbackState.Valid = true;
-        ShapeDistorter.Instance.AddDistort(_shape, 0.15f, 0.3f);
+        ShapeDistorter.Instance.AddDistort(_shape, 0.15f, 1.3f);
 
         StartCoroutine(Knockback());
     }

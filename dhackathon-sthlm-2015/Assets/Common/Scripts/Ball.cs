@@ -8,7 +8,10 @@ public class Ball : MonoBehaviour
     [SerializeField]
     private float _maxSpeed = 300f;
 
-    public float PushbackForce = 10f;
+    [SerializeField]
+    public float _characterKnockbackMultiplier = 0.5f;
+    [SerializeField]
+    private float _shieldKnockbackMultiplier = 0.1f;
 
     private Rigidbody2D _rb;
     private TrailRenderer _trail;
@@ -17,6 +20,8 @@ public class Ball : MonoBehaviour
     private Vector2 _velocity;
 
     public Vector2 Velocity { get { return _rb.velocity; } }
+	public float ShieldKnockbackLength { get { return _rb.velocity.magnitude * _shieldKnockbackMultiplier; } }
+	public float CharacterKnockbackLength { get { return _rb.velocity.magnitude * _characterKnockbackMultiplier; } }
 
     private void Awake()
     {
@@ -39,17 +44,6 @@ public class Ball : MonoBehaviour
 			_velocity = Vector2.ClampMagnitude(_velocity, _maxSpeed);
             _rb.velocity = _velocity;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        var character = collision.gameObject.GetComponent<Character>();
-        if (!character)
-        {
-            return;
-        }
-
-        character.TakeDamage(10);
     }
 
     public void MultiplySpeed(Vector3 dir, float multiplier)

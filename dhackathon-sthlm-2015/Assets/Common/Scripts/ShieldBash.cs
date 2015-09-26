@@ -6,8 +6,6 @@ public class ShieldBash : MonoBehaviour
     [SerializeField]
     private Shield _shield;
 
-    private bool _isBashing;
-
     private Character _character;
     private Animator _animator;
 
@@ -24,15 +22,15 @@ public class ShieldBash : MonoBehaviour
 
     public void ResetIsBashing()
     {
-        _isBashing = false;
+        _character.IsBashing = false;
     }
 
     private void DoInput()
     {
         string buttonName = InputManager.GetInputName(_character.PlayerValue, InputManager.InputType.ShieldBash);
-        if (!_isBashing && Input.GetButtonDown(buttonName))
+        if (!_character.IsBashing && Input.GetButtonDown(buttonName))
         {
-            _isBashing = true;
+            _character.IsBashing = true;
             _animator.SetTrigger("Bash");
             _shield.Bash(BashValues.BashTime, BashValues.BashMultiplier);
         }

@@ -74,7 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseSpeed: 70
   _maxSpeed: 300
-  PushbackForce: 10
+  _characterKnockbackMultiplier: .25
+  _shieldKnockbackMultiplier: .100000001
 --- !u!114 &11444628
 MonoBehaviour:
   m_ObjectHideFlags: 1
