@@ -9,7 +9,6 @@ public class Shield : MonoBehaviour
         public bool Valid;
     }
 
-    [SerializeField]
     private Character _character;
 
     private BashState _bashState;
@@ -45,7 +44,10 @@ public class Shield : MonoBehaviour
         else
         {
 			ball.MultiplySpeed(transform.up, _bashState.SpeedMultiplier);
-            FreezeManager.Instance.Freeze(true);
+            float duration = ball.Velocity.magnitude * 0.01f;
+            duration = Mathf.Min(duration, 1f);
+            FreezeManager.Instance.Freeze(false, duration);
+            ScreenShaker.Instance.ScreenShake(duration);
             _bashState.Valid = false;
         }
     }

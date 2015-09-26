@@ -22,26 +22,26 @@ public class FreezeManager : MonoBehaviour
         Instance = this;
     }
 
-    public void Freeze(bool screenShakeAfter)
+    public void Freeze(bool screenShakeAfter, float duration)
     {
-        StartCoroutine(StartFreeze(screenShakeAfter));
+        StartCoroutine(StartFreeze(screenShakeAfter, duration));
         _isFreezing = true;
     }
 
-    private IEnumerator StartFreeze(bool screenShakeAfter)
+    private IEnumerator StartFreeze(bool screenShakeAfter, float duration)
     {
         float startTime = Time.unscaledTime;
         Time.timeScale = _freezeValue;
-        while (startTime + _freezeTime > Time.unscaledTime)
+        while (startTime + duration > Time.unscaledTime)
         {
             yield return null;
         }
 
         Time.timeScale = 1f;
-        if (screenShakeAfter)
-        {
-            ScreenShaker.Instance.ScreenShake();
-        }
+        //  if (screenShakeAfter)
+        //  {
+        //      ScreenShaker.Instance.ScreenShake();
+        //  }
         _isFreezing = false;
     }
 }

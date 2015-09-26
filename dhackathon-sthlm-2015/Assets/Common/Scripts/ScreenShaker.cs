@@ -22,32 +22,40 @@ public class ScreenShaker : MonoBehaviour
         Instance = this;
     }
 
-    public void ScreenShake()
+    public void ScreenShake(float duration)
     {
-        StartCoroutine(Shake());
+        StartCoroutine(Shake(duration));
         _isShaking = true;
     }
 
-    private IEnumerator Shake()
+    private IEnumerator Shake(float duration)
     {
         AnimationCurve x = _config.X;
         AnimationCurve y = _config.Y;
-        float duration = _config.Duration;
-        float strength = _config.Strength;
+        AnimationCurve strength = _config.Strength;
+        //  float duration = _config.Duration;
+        float updateRate = _config.UpdateRate;
 
         float startTime = Time.unscaledTime;
         Vector3 startPos = transform.position;
 
+        float time = 0f;
+
         while (startTime + duration > Time.unscaledTime)
         {
-            float t = (Time.unscaledTime - startTime) / duration;
-
-            float xShake = x.Evaluate(t) * strength;
-            float yShake = y.Evaluate(t) * strength;
-
-            Vector3 pos = new Vector3(xShake, yShake, 0f);
-            transform.position = startPos + pos;
-
+            time += Time.unscaledDeltaTime;
+            if (time > updateRate)
+            {
+                time -= updateRate;
+                float t = (Time.unscaledTime - startTime) / duration;
+	
+				Vector2 random = Random.insideUnitCircle;
+				float xShake = random.x * strength.Evaluate(t);
+				float yShake = random.y * strength.Evaluate(t);
+	
+				Vector3 pos = new Vector3(xShake, yShake, 0f);
+				transform.position = startPos + pos;
+            }
             yield return null;
         }
 

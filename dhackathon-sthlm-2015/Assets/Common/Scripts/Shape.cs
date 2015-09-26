@@ -45,6 +45,7 @@ public class Shape : MonoBehaviour
             m_drawObject.List[i] = rotation * m_drawObject.List[i];
             m_drawObject.List[i] += position;
         }
+        m_drawObject.Color = m_color;
 
         // Enqueue this drawObject to camera's PostRenderer
         m_printer.Objects.Enqueue(m_drawObject);

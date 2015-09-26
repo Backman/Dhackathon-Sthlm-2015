@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e465b4bde544764813d2eabad3b509, type: 3}
+  m_Name: CharacterConfig
+  m_EditorClassIdentifier: 
+  Health: 100
+  MovementSpeed: 100
+  DeathParticle: {fileID: 176652, guid: 6f6f1989deb044d2f8237f6d189917ec, type: 2}
+  KnockbackConfig: {fileID: 11400000, guid: aeefa18c5e24a4a1baa91888ca8a27b3, type: 2}

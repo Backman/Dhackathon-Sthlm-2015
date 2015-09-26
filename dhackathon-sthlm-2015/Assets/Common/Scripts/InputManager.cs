@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class InputManager
 {
@@ -49,6 +50,12 @@ public static class InputManager
     {
         _playerInput = new Dictionary<Player, Dictionary<InputType, string>>();
         InitInput();
+
+        string[] names = Input.GetJoystickNames();
+		for (int i = 0; i < names.Length; i++)
+		{
+            Debug.Log(names[i]);
+        }
     }
 
     private static void InitInput()
@@ -62,11 +69,11 @@ public static class InputManager
         playerOneInput.Add(InputType.YRotation, PlayerOneYRot);
         playerOneInput.Add(InputType.ShieldBash, PlayerOneShieldBash);
 		
-        playerTwoInput.Add(InputType.Horizontal, PlayerOneHoriz);
-        playerTwoInput.Add(InputType.Vertical, PlayerOneVert);
-        playerTwoInput.Add(InputType.XRotation, PlayerOneXRot);
-        playerTwoInput.Add(InputType.YRotation, PlayerOneYRot);
-        playerTwoInput.Add(InputType.ShieldBash, PlayerOneShieldBash);
+        playerTwoInput.Add(InputType.Horizontal, PlayerTwoHoriz);
+        playerTwoInput.Add(InputType.Vertical, PlayerTwoVert);
+        playerTwoInput.Add(InputType.XRotation, PlayerTwoXRot);
+        playerTwoInput.Add(InputType.YRotation, PlayerTwoYRot);
+        playerTwoInput.Add(InputType.ShieldBash, PlayerTwoShieldBash);
 
         _playerInput.Add(Player.PlayerOne, playerOneInput);
         _playerInput.Add(Player.PlayerTwo, playerTwoInput);
