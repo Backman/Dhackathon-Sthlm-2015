@@ -105,11 +105,6 @@ public class Character : MonoBehaviour
         string xRot = InputManager.GetInputName(PlayerValue, InputManager.InputType.XRotation);
         string yRot = InputManager.GetInputName(PlayerValue, InputManager.InputType.YRotation);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Kill();
-        }
-
         _movement.x = Input.GetAxisRaw(horiz);
         _movement.y = Input.GetAxisRaw(vert);
 
