@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f3fec1dad5974ba0a9876ffaab235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_vertices: []
+  m_distortFactor: 1
   m_geometryType: 4
   m_resolution: 256
   m_color: {r: 1, g: 1, b: 1, a: 1}
@@ -311,7 +311,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: d8723fcfa62f13644ba4ff4f6a34105d, type: 2}
+  - {fileID: 2100000, guid: 5ebbbb5b4be2bcc4ba2660459531245e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a665369d1ad450d4d940d63716f96cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_material: {fileID: 2100000, guid: d8723fcfa62f13644ba4ff4f6a34105d, type: 2}
+  m_material: {fileID: 2100000, guid: 5ebbbb5b4be2bcc4ba2660459531245e, type: 2}
 --- !u!1 &1809644853
 GameObject:
   m_ObjectHideFlags: 0
