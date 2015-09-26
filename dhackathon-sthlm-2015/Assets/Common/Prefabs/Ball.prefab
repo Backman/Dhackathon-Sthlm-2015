@@ -12,6 +12,8 @@ GameObject:
   - 50: {fileID: 5096992}
   - 58: {fileID: 5835838}
   - 114: {fileID: 11409346}
+  - 114: {fileID: 11444628}
+  - 114: {fileID: 11480588}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.6099999, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +61,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .0799999982
+  m_Radius: 1
 --- !u!114 &11409346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,13 +75,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseSpeed: 10
   PushbackForce: 10
+--- !u!114 &11444628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11480588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476f3fec1dad5974ba0a9876ffaab235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_geometryType: 1
+  m_resolution: 256
+  m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21275796
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169278}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
