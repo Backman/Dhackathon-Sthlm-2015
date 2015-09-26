@@ -13,23 +13,38 @@ public class Character : MonoBehaviour
 
     public Player PlayerValue;
     [SerializeField]
-    private float _movementSpeed = 3f;
-    [SerializeField]
-    private KnockbackConfig _knockbackConfig;
+    private CharacterConfig _config;
+
+    private int _health;
 
     private Rigidbody2D _rb;
     private Vector2 _movement;
     private float _angle;
 
     private KnockbackState _knockbackState;
+    private KnockbackConfig _knockbackConfig;
+
+    private Shape _shape;
+    private bool _isAlive = true;
+	
+	public bool IsAlive { get { return _isAlive; } }
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _shape = GetComponent<Shape>();
+        _health = _config.Health;
+        _knockbackConfig = _config.KnockbackConfig;
     }
 
     private void Update()
     {
+        if (!_isAlive)
+        {
+            _rb.velocity = Vector2.zero;
+            return;
+        }
+		
         DoInput();
     }
 
@@ -37,10 +52,50 @@ public class Character : MonoBehaviour
     {
         if(!_knockbackState.Valid)
         {
-            _rb.velocity = _movement * _movementSpeed;
+            _rb.velocity = _movement * _config.MovementSpeed;
         }
 
         _rb.rotation = _angle;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        _health -= amount;
+        if (_isAlive && _health <= 0)
+        {
+            //  Kill();
+        }
+    }
+
+    private void Kill()
+    {
+        var duration = 1f;
+        var intensity = 0.1f;
+        ShapeDistorter.Instance.AddDistort(_shape, intensity, duration);
+		StartCoroutine(FadeColor(duration));
+		_isAlive = false;
+
+        if (_config.DeathParticle)
+        {
+            Instantiate(_config.DeathParticle, transform.position, transform.rotation);
+        }
+
+        Destroy(gameObject, duration);
+    }
+
+    private IEnumerator FadeColor(float duration)
+    {
+        var startTime = Time.unscaledTime;
+        var a = _shape.m_color.a;
+
+        while (startTime + duration >= Time.unscaledTime)
+        {
+            var percent = 1f - ((Time.unscaledTime - startTime) / duration);
+            _shape.m_color.a = a * percent;
+            yield return null;
+        }
+
+        _shape.m_color.a = 0f;
     }
 
     private void DoInput()

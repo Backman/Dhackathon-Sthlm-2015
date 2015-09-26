@@ -8,7 +8,7 @@ namespace UnityEngine
 			[MenuItem("Window/EdgeCollider2D Snap")]
 			public static void ShowWindow()
 			{
-				EditorWindow.GetWindow(typeof(EdgeCollider2DEditor));
+				EditorWindow.GetWindow(typeof(EdgeCollider2DEditor), false, "Edge Collider Editor");
 			}
 	
 			EdgeCollider2D edge;

@@ -71,5 +71,30 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 1
-  Duration: .300000012
-  Strength: .400000006
+  Strength:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 2.98558068
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .767163038
+      value: 2.99079847
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .952543855
+      value: 1.60451031
+      inSlope: -19.624588
+      outSlope: -19.624588
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -49.9616127
+      outSlope: -49.9616127
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  Duration: 2
+  UpdateRate: .0500000007

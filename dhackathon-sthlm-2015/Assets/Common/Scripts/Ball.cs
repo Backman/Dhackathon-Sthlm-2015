@@ -5,6 +5,8 @@ public class Ball : MonoBehaviour
 {
     [SerializeField]
     private float _baseSpeed;
+    [SerializeField]
+    private float _maxSpeed = 300f;
 
     public float PushbackForce = 10f;
 
@@ -35,8 +37,20 @@ public class Ball : MonoBehaviour
     {
         if (Mathf.Abs(_rb.velocity.sqrMagnitude - _velocity.sqrMagnitude) > 0.001f)
         {
+			_velocity = Vector2.ClampMagnitude(_velocity, _maxSpeed);
             _rb.velocity = _velocity;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        var character = collision.gameObject.GetComponent<Character>();
+        if (!character)
+        {
+            return;
+        }
+
+        character.TakeDamage(10);
     }
 
     public void MultiplySpeed(Vector3 dir, float multiplier)
