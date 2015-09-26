@@ -82,13 +82,11 @@ public class MusicFeedback : MonoBehaviour
         for (int i = 0; i < 256; ++i)
             m_offsets[i] = -0.2f + ((m_freqData[i + 150] + lowIntensity) * 30f);
         m_offsets[m_offsets.Length - 1] = m_offsets[0];
-        
-        
-        m_shape.SetOffset(m_offsets);
 
         for(int i = 0; i < m_shapes.Count; ++i)
-        {
             m_shapes[i].SetOffset(m_offsets);
-        }
+
+        if (m_shape != null)
+            m_shape.SetOffset(m_offsets);
 	}
 }
