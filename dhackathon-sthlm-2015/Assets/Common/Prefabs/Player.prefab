@@ -31,6 +31,7 @@ GameObject:
   - 4: {fileID: 437434}
   - 68: {fileID: 6888874}
   - 114: {fileID: 11410316}
+  - 82: {fileID: 8282864}
   m_Layer: 0
   m_Name: ShieldCollision
   m_TagString: Untagged
@@ -136,6 +137,76 @@ EdgeCollider2D:
   m_Points:
   - {x: .600000024, y: 0}
   - {x: -.600000024, y: 0}
+--- !u!82 &8282864
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165900}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9599952
 Animator:
   serializedVersion: 3
@@ -164,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb598b8afdf145bab54c9f7ce98a991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bounce: {fileID: 8300000, guid: 5abd9b2b37c01d64fa8c0b03e6736f0b, type: 3}
 --- !u!114 &11417474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,7 +276,7 @@ MonoBehaviour:
   m_offsets: []
   m_geometryType: 4
   m_resolution: 8
-  m_color: {r: 1, g: .599999964, b: 0, a: 1}
+  m_color: {r: .602551997, g: .805102527, b: .871999979, a: 1}
 --- !u!114 &11477062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,7 +303,7 @@ MonoBehaviour:
   m_offsets: []
   m_geometryType: 1
   m_resolution: 256
-  m_color: {r: .10802336, g: .816176474, b: .171512946, a: 1}
+  m_color: {r: .115411766, g: .684157312, b: .871999979, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

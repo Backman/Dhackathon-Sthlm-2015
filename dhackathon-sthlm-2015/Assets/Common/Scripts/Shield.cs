@@ -9,6 +9,11 @@ public class Shield : MonoBehaviour
         public bool Valid;
     }
 
+    [SerializeField]
+    private AudioClip _bounce;
+
+    private AudioSource _audioSource;
+
     private Character _character;
 
     private BashState _bashState;
@@ -18,6 +23,7 @@ public class Shield : MonoBehaviour
     private void Awake()
     {
         _character = GetComponentInParent<Character>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -40,6 +46,12 @@ public class Shield : MonoBehaviour
         {
             Vector2 dir = _character.transform.position - ball.transform.position;
             _character.Knockback(dir.normalized, ball.Velocity.magnitude * 0.1f);
+
+            if(_audioSource != null && _bounce != null)
+            {
+                _audioSource.clip = _bounce;
+                _audioSource.Play();
+            }
         }
         else
         {
