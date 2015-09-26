@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &65375301
 MonoBehaviour:
@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &85466768
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &85466771
 MonoBehaviour:
@@ -197,6 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &88355545
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &136649706
 MonoBehaviour:
@@ -284,6 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &147298957
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &147298960
 MonoBehaviour:
@@ -340,6 +346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &173155662
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &173155665
 MonoBehaviour:
@@ -396,6 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &193187830
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &193187833
 MonoBehaviour:
@@ -452,6 +462,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &216267781
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &216267784
 MonoBehaviour:
@@ -508,6 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &223612031
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &223612034
 MonoBehaviour:
@@ -564,6 +578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &258211815
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &258211818
 MonoBehaviour:
@@ -620,6 +636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &269199925
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &352188307
 MonoBehaviour:
@@ -710,6 +728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &373552206
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &373552209
 MonoBehaviour:
@@ -766,6 +786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &387548888
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &422623364
 MonoBehaviour:
@@ -883,6 +905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &442558439
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &442558442
 MonoBehaviour:
@@ -939,6 +963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &443612911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &499948506
 MonoBehaviour:
@@ -1114,6 +1140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &505879558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &505879561
 MonoBehaviour:
@@ -1170,6 +1198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &512436017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &512436020
 MonoBehaviour:
@@ -1226,6 +1256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &545185276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &545185279
 MonoBehaviour:
@@ -1282,6 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &601376076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &601376079
 MonoBehaviour:
@@ -1338,6 +1372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &687085066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,7 +1417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &687085069
 MonoBehaviour:
@@ -1394,6 +1430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &712736059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &712736062
 MonoBehaviour:
@@ -1450,6 +1488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &713685542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &713685545
 MonoBehaviour:
@@ -1506,6 +1546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &752842388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &761537947
 MonoBehaviour:
@@ -1594,6 +1636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &810062996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &810062999
 MonoBehaviour:
@@ -1650,6 +1694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &812970887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &812970889
 MonoBehaviour:
@@ -1694,6 +1740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!4 &812970890
 Transform:
   m_ObjectHideFlags: 0
@@ -1749,7 +1797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &881481611
 MonoBehaviour:
@@ -1762,6 +1810,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &894347330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,7 +1855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &894347333
 MonoBehaviour:
@@ -1818,6 +1868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &985813442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,7 +1944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1006828447
 MonoBehaviour:
@@ -1905,6 +1957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1009175329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,7 +2036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1027846812
 MonoBehaviour:
@@ -1995,6 +2049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1044641711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1044641714
 MonoBehaviour:
@@ -2051,6 +2107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1076181369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1076181372
 MonoBehaviour:
@@ -2107,6 +2165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1105373564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,7 +2210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1105373567
 MonoBehaviour:
@@ -2163,6 +2223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1111114518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1111114521
 MonoBehaviour:
@@ -2219,6 +2281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1135179630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,7 +2326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1135179633
 MonoBehaviour:
@@ -2275,6 +2339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1140619980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,7 +2384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1140619983
 MonoBehaviour:
@@ -2331,6 +2397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1216769846
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1216769849
 MonoBehaviour:
@@ -2387,6 +2455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1289472698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1289472701
 MonoBehaviour:
@@ -2443,6 +2513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1343434470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,7 +2558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1343434473
 MonoBehaviour:
@@ -2499,6 +2571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1356710144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,7 +2727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1486753199
 MonoBehaviour:
@@ -2666,6 +2740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1537532546
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1537532549
 MonoBehaviour:
@@ -2722,6 +2798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1557628929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,7 +2843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1557628932
 MonoBehaviour:
@@ -2778,6 +2856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1564566221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,7 +3032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1617066920
 MonoBehaviour:
@@ -2965,6 +3045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1635401821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,7 +3121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1642627481
 MonoBehaviour:
@@ -3052,6 +3134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1649219099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,7 +3212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1668527842
 MonoBehaviour:
@@ -3141,6 +3225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1756936174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,7 +3270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1756936177
 MonoBehaviour:
@@ -3197,6 +3283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1761108672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,7 +3328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1761108675
 MonoBehaviour:
@@ -3253,6 +3341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1833420399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,7 +3386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1833420402
 MonoBehaviour:
@@ -3309,6 +3399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1862342260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,7 +3478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1864408444
 MonoBehaviour:
@@ -3399,6 +3491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1900050403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,7 +3536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1900050406
 MonoBehaviour:
@@ -3455,6 +3549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &1902641891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,7 +3594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1902641894
 MonoBehaviour:
@@ -3511,6 +3607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &2086617909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,7 +3652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 64
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2086617912
 MonoBehaviour:
@@ -3567,6 +3665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
 --- !u!1 &2111820568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,7 +3710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_distortFactor: 1
   m_geometryType: 4
-  m_resolution: 32
+  m_resolution: 16
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &2111820571
 MonoBehaviour:
@@ -3623,3 +3723,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 1
+  _randomness: 0
