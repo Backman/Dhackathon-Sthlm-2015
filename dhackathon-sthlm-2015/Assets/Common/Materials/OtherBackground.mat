@@ -134,23 +134,23 @@ Material:
       data:
         first:
           name: _zoom
-        second: 62.7299995
+        second: 21
       data:
         first:
           name: _speed
-        second: 1
+        second: .730000019
       data:
         first:
           name: _rythm
-        second: .00336950552
+        second: .00633787317
       data:
         first:
           name: _width
-        second: 681
+        second: 1179
       data:
         first:
           name: _height
-        second: 383
+        second: 663
       data:
         first:
           name: _posx
@@ -183,16 +183,16 @@ Material:
       data:
         first:
           name: _col0
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: .583999991, g: .147752017, b: .147752017, a: 1}
       data:
         first:
           name: _col1
-        second: {r: .862069011, g: 1, b: 0, a: 1}
+        second: {r: .727941155, g: .346168667, b: .13903679, a: 1}
       data:
         first:
           name: _col2
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .771000028, g: .590213835, b: 0, a: 1}
       data:
         first:
           name: _col3
-        second: {r: 1, g: .599999964, b: 0, a: 1}
+        second: {r: .202999994, g: 0, b: 0, a: 1}

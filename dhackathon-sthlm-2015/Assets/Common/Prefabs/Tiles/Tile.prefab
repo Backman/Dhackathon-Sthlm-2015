@@ -174,8 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_offsets: []
   m_geometryType: 2
-  m_resolution: 16
-  m_color: {r: .300118953, g: .417823762, b: .448529422, a: 1}
+  m_resolution: 25
+  m_color: {r: .328000009, g: .0506470688, b: .285918832, a: 1}
 --- !u!212 &21220274
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -201,7 +201,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: c156c2310e62b4704989a3d999f2d9b2, type: 3}
-  m_Color: {r: .0986699834, g: .127446011, b: .183823526, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -227,15 +227,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
-      value: .0986699834
+      value: .363999993
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.g
-      value: .127446011
+      value: .211311951
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.b
-      value: .183823526
+      value: .128470585
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
