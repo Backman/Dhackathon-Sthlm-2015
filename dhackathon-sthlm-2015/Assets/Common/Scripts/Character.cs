@@ -77,7 +77,7 @@ public class Character : MonoBehaviour
     public void Kill()
     {
         var duration = 1f;
-        var intensity = 0.1f;
+        var intensity = 0.3f;
         ShapeDistorter.Instance.AddDistort(_shape, intensity, duration);
 		StartCoroutine(FadeColor(duration));
 		_isAlive = false;
