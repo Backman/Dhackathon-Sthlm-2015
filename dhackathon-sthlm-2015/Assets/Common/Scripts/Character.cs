@@ -144,8 +144,9 @@ public class Character : MonoBehaviour
         _knockbackState.Direction = dir;
         _knockbackState.Length = length;
         _knockbackState.Valid = true;
-		
-		StartCoroutine(Knockback());
+        ShapeDistorter.Instance.AddDistort(_shape, 0.15f, 0.3f);
+
+        StartCoroutine(Knockback());
     }
 
     private IEnumerator Knockback()

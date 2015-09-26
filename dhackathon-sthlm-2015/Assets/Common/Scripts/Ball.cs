@@ -29,8 +29,7 @@ public class Ball : MonoBehaviour
         float y = Random.value;
 
         _currentSpeed = _baseSpeed;
-        _rb.AddForce(new Vector2(x, y) * _currentSpeed, ForceMode2D.Impulse);
-        _velocity = _rb.velocity;
+		_velocity = new Vector3(x, y) * _currentSpeed;
     }
 
     private void FixedUpdate()

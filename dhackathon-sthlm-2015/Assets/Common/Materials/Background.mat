@@ -142,15 +142,15 @@ Material:
       data:
         first:
           name: _rythm
-        second: .00347501272
+        second: .00967488717
       data:
         first:
           name: _width
-        second: 1280
+        second: 1179
       data:
         first:
           name: _height
-        second: 720
+        second: 663
       data:
         first:
           name: _posx

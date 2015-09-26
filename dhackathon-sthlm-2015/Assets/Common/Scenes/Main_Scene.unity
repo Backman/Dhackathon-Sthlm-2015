@@ -410,6 +410,7 @@ GameObject:
   - 4: {fileID: 868310109}
   - 82: {fileID: 868310108}
   - 114: {fileID: 868310107}
+  - 114: {fileID: 868310110}
   m_Layer: 0
   m_Name: MusicShitter
   m_TagString: MusicFeedback
@@ -511,6 +512,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &868310110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868310106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7e23609e2fa49e896bc24a8d4114d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxValue: 0
+  _minValue: 0
+  _fadeSpeed: 0
 --- !u!1 &1506538456
 GameObject:
   m_ObjectHideFlags: 0
