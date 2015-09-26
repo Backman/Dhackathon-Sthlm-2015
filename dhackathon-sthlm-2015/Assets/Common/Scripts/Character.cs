@@ -124,6 +124,8 @@ public class Character : MonoBehaviour
         _movement.x = Input.GetAxisRaw(horiz);
         _movement.y = Input.GetAxisRaw(vert);
 
+        _movement.Normalize();
+
         Vector2 rot;
         rot.x = Input.GetAxisRaw(xRot);
         rot.y = Input.GetAxisRaw(yRot);

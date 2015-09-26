@@ -24,12 +24,12 @@ public class Ball : MonoBehaviour
         //  _trail = GetComponent<TrailRenderer>();
         //  _trail.sortingOrder = -1;
 
-        Random.seed = (int)System.DateTime.Now.Ticks;
-        float x = Random.value;
-        float y = Random.value;
+        //Random.seed = (int)System.DateTime.Now.Ticks;
+        //float x = Random.value;
+        //float y = Random.value;
 
         _currentSpeed = _baseSpeed;
-		_velocity = new Vector3(x, y) * _currentSpeed;
+		_velocity = Vector3.up * _currentSpeed;
     }
 
     private void FixedUpdate()
