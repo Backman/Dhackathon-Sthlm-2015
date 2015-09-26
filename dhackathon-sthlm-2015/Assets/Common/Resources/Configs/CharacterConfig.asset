@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: CharacterConfig
   m_EditorClassIdentifier: 
   Health: 100
-  MovementSpeed: 100
+  MovementSpeed: 60
   DeathParticle: {fileID: 0}
   KnockbackConfig: {fileID: 11400000, guid: aeefa18c5e24a4a1baa91888ca8a27b3, type: 2}

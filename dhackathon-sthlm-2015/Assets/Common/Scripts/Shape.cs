@@ -96,7 +96,7 @@ public class Shape : MonoBehaviour
 
     private void Line()
     {
-        var space = 1f / m_vertices.Length;
+        var space = 1f / (m_vertices.Length - 1);
 
         for(int i = 0; i < m_vertices.Length; ++i)
         {

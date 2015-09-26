@@ -18,18 +18,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: {x: 0, y: .800000012, z: 0}
-        inSlope: {x: 0, y: 4.79999971, z: 0}
-        outSlope: {x: 0, y: 4.79999971, z: 0}
+        inSlope: {x: 0, y: .752181113, z: 0}
+        outSlope: {x: 0, y: .752181113, z: 0}
         tangentMode: 0
-      - time: .0416666679
-        value: {x: 0, y: 1, z: 0}
-        inSlope: {x: 0, y: 2.63999987, z: 0}
-        outSlope: {x: 0, y: 2.63999987, z: 0}
-        tangentMode: 0
-      - time: .458333343
+      - time: .020833334
         value: {x: 0, y: 1.20000005, z: 0}
-        inSlope: {x: 0, y: .480000079, z: 0}
-        outSlope: {x: 0, y: .480000079, z: 0}
+        inSlope: {x: 0, y: .911046624, z: 0}
+        outSlope: {x: 0, y: .911046624, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -37,7 +32,7 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
-  m_SampleRate: 24
+  m_SampleRate: 48
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -54,7 +49,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .458333343
+    m_StopTime: .020833334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -77,11 +72,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .458333343
+      - time: .020833334
         value: 0
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.x
@@ -93,19 +88,14 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: .800000012
-        inSlope: 4.79999971
-        outSlope: 4.79999971
-        tangentMode: 10
-      - time: .0416666679
-        value: 1
-        inSlope: 2.63999987
-        outSlope: 2.63999987
-        tangentMode: 10
-      - time: .458333343
+        inSlope: .752181113
+        outSlope: .752181113
+        tangentMode: 0
+      - time: .020833334
         value: 1.20000005
-        inSlope: .480000079
-        outSlope: .480000079
-        tangentMode: 10
+        inSlope: .911046624
+        outSlope: .911046624
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.y
@@ -120,11 +110,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .458333343
+      - time: .020833334
         value: 0
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.z
@@ -136,7 +126,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: .458333343
+  - time: .020833334
     functionName: ResetIsBashing
     data: 
     objectReferenceParameter: {fileID: 0}
