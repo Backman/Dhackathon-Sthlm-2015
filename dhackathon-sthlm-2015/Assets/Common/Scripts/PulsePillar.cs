@@ -5,6 +5,9 @@ using System.Collections;
 public class PulsePillar : MonoBehaviour
 {
     [SerializeField]
+    private float _distortIntensity = 0.3f;
+	
+    [SerializeField]
     private Vector2 _pulseInterval = new Vector2(1f, 8f);
 	[SerializeField]
     private float _waitTime = 0.4f;
@@ -51,15 +54,17 @@ public class PulsePillar : MonoBehaviour
     }
 
     private IEnumerator Pulse()
-    {
+    {		
         _pulsing = true;
         var startTime = Time.time;
         var startRadius = _collider.radius;
         var pulseRadius = startRadius + _pulseRadius;
         var currentOffset = 0f;
 		
-		
-        var offsetTween = DOTween.To(() => currentOffset, x => { currentOffset = x; SetOffset(currentOffset); }, _pulseRadius, _pulseSpeed);
+        var offsetTween = DOTween.To(() => currentOffset, x => { 
+			currentOffset = x;
+			SetOffset(currentOffset, _distortIntensity * Mathf.Clamp01(x));
+			}, _pulseRadius, _pulseSpeed);
         var radiusTween = DOTween.To(() => _collider.radius, x =>	_collider.radius = x, pulseRadius, _pulseSpeed);
 		
         offsetTween.Pause();
@@ -70,13 +75,18 @@ public class PulsePillar : MonoBehaviour
 
         offsetTween.Restart();
         radiusTween.Restart();
-		
+
         yield return radiusTween.WaitForCompletion();
         yield return offsetTween.WaitForCompletion();
 
+        ShapeDistorter.Instance.AddDistort(_shape, _distortIntensity, _waitTime);
+
         yield return new WaitForSeconds(_waitTime);
 
-        offsetTween = DOTween.To(() => currentOffset, x => { currentOffset = x; SetOffset(currentOffset); }, 0f, _retractionSpeed);
+        offsetTween = DOTween.To(() => currentOffset, x => { 
+			currentOffset = x;
+			SetOffset(currentOffset, _distortIntensity * Mathf.Clamp01(x));
+			}, 0f, _retractionSpeed);
         radiusTween = DOTween.To(() => _collider.radius, x =>	_collider.radius = x, startRadius, _retractionSpeed);
 		
 		offsetTween.Pause();
@@ -92,16 +102,16 @@ public class PulsePillar : MonoBehaviour
         yield return offsetTween.WaitForCompletion();
 
         _collider.radius = startRadius;
-        SetOffset(0f);
+        SetOffset(0f, 0f);
         RandomizeTime();
         _pulsing = false;
     }
 
-    private void SetOffset(float radius)
+    private void SetOffset(float radius, float intensity)
     {
         for (int i = 0; i < _offsets.Length; ++i)
         {
-            _offsets[i] = radius;
+            _offsets[i] = radius + Random.value * intensity;
         }
 
         _shape.SetOffset(_offsets);

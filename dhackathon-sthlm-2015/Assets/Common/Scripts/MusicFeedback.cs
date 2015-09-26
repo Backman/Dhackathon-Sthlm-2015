@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class MusicFeedback : MonoBehaviour 
 {
+    private static MusicFeedback _instance;
+
     private struct ActiveShape
     {
         public Shape Shape;
@@ -31,6 +33,15 @@ public class MusicFeedback : MonoBehaviour
 
     void Awake()
     {
+        if(_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+        _instance = this;
+
         m_audioSource = GetComponent<AudioSource>();
     }
 
@@ -101,11 +112,17 @@ public class MusicFeedback : MonoBehaviour
         foreach (var shape in _shapes.Values)
         {
             var offsets = shape.Offsets;
+            int k = 150;
+            if (shape.Randomness)
+            {
+                k = Random.Range(150, 170);
+            }
+            var rand = shape.Randomness ? Random.Range(0.4f, 0.8f) : 1f;
             for (int i = 0; i < offsets.Length; ++i)
 			{
-                float rand = shape.Randomness ? Random.Range(0.3f, 1.7f) : 1f;
-                offsets[i] = -0.2f + ((m_freqData[i + 150] * rand + lowIntensity * shape.Intensity) * 30f);
-			}
+                offsets[i] = -0.2f + ((m_freqData[i + k] + lowIntensity) * 30f);
+                offsets[i] *= shape.Intensity;
+            }
        		offsets[offsets.Length - 1] = offsets[0];
             shape.Shape.SetOffset(offsets);
         }

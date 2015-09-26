@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7981d2cb27c1649bfbe64f3c246f3b3a, type: 3}
   m_Name: TileSpawnerConfig
   m_EditorClassIdentifier: 
-  Width: 25
-  Height: 20
-  TileSize: 6
+  Width: 20
+  Height: 12
+  Offset: {x: .5, y: .5}
+  TileSize: 10
   TileTweenDuration: .300000012
   TimeUntilTileTweening: 1
   TileTweenWaitInterval: {x: 1.29999995, y: 1.60000002}

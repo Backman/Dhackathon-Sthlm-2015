@@ -41,7 +41,6 @@ public class Character : MonoBehaviour
     {
         if (!_isAlive)
         {
-            _rb.velocity = Vector2.zero;
             return;
         }
 		
@@ -50,6 +49,11 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_isAlive)
+        {
+            return;
+        }
+		
         if(!_knockbackState.Valid)
         {
             _rb.velocity = _movement * _config.MovementSpeed;
@@ -70,20 +74,29 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void Kill()
+    public void Kill()
     {
         var duration = 1f;
         var intensity = 0.1f;
         ShapeDistorter.Instance.AddDistort(_shape, intensity, duration);
 		StartCoroutine(FadeColor(duration));
 		_isAlive = false;
+        _rb.velocity = Vector2.zero;
 
         if (_config.DeathParticle)
         {
             Instantiate(_config.DeathParticle, transform.position, transform.rotation);
         }
 
-        Destroy(gameObject, duration);
+        //Destroy(gameObject, duration);
+
+        StartCoroutine(RestartGame(duration));
+    }
+
+    private IEnumerator RestartGame(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Application.LoadLevel(0);
     }
 
     private IEnumerator FadeColor(float duration)

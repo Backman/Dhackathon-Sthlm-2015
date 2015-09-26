@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88d7cf80af7c54699d7644189e8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _intensity: 3
+  _randomness: 0
 --- !u!114 &11480588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476f3fec1dad5974ba0a9876ffaab235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_offsets: []
   m_geometryType: 1
-  m_resolution: 256
+  m_resolution: 128
   m_color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -110,6 +113,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_resolution
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _intensity
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

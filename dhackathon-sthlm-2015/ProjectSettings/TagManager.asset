@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MusicFeedback
   - Ball
+  - Tile
   layers:
   - Default
   - TransparentFX

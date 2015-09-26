@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6693c01adf6444eefa02c5cc66d8ec77, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  TileDropSettings:
+  - TilesToDropInterval: {x: 1, y: 3}
+    AfterTimeInterval: {x: 3, y: 5}
+  - TilesToDropInterval: {x: 3, y: 5}
+    AfterTimeInterval: {x: 3, y: 5}
+  - TilesToDropInterval: {x: 5, y: 8}
+    AfterTimeInterval: {x: 3, y: 5}
+  - TilesToDropInterval: {x: 5, y: 10}
+    AfterTimeInterval: {x: 3, y: 5}
+  - TilesToDropInterval: {x: 5, y: 12}
+    AfterTimeInterval: {x: 3, y: 5}

@@ -10,6 +10,7 @@ public class ShapeDistorter : MonoBehaviour
         public float Duration;
         public float Intensity;
         public float[] Offsets;
+        public float[] OriginalOffsets;
         public DistortCallback Callback;
     }
 
@@ -66,14 +67,13 @@ public class ShapeDistorter : MonoBehaviour
 
     private void Distort(ActiveDistort distort)
     {
-        var offsets = distort.Offsets;
         var intensity = distort.Intensity;
-        for (int i = 0; i < offsets.Length; i++)
+        for (int i = 0; i < distort.Offsets.Length; i++)
 		{
-            offsets[i] = Random.insideUnitCircle.x * intensity;
+            distort.Offsets[i] = Random.insideUnitCircle.x * intensity + distort.OriginalOffsets[i];
         }
-        offsets[offsets.Length - 1] = offsets[0];
-        distort.Shape.SetOffset(offsets);
+        distort.Offsets[distort.Offsets.Length - 1] = distort.Offsets[0];
+        distort.Shape.SetOffset(distort.Offsets);
     }
 
     public void AddDistort(Shape shape, float intensity, float duration, DistortCallback callback = null)
@@ -84,8 +84,9 @@ public class ShapeDistorter : MonoBehaviour
             StartTime = Time.unscaledTime,
             Duration = duration,
             Intensity = intensity,
-			Offsets = new float[shape.m_resolution],
-			Callback = callback
+            Offsets = new float[shape.m_resolution],
+            OriginalOffsets = shape.m_offsets,
+        	Callback = callback
     	};
 		
         _activeDistorts.Add(distort);

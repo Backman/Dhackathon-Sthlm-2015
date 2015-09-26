@@ -36,8 +36,8 @@ public class TileSpawner : MonoBehaviour
         var tiles = _config.Tiles;
         var tileSize = _config.TileSize;
 
-        var xOffset = (-width * tileSize) * 0.5f;
-        var yOffset = (-height * tileSize) * 0.5f;
+        var xOffset = (-width * tileSize) * 0.5f + _config.Offset.x * tileSize;
+        var yOffset = (-height * tileSize) * 0.5f + _config.Offset.y * tileSize;
 
         if (_tileParent)
         {
@@ -59,13 +59,14 @@ public class TileSpawner : MonoBehaviour
                 var offset = Vector2.one;
                 offset.x *= randomPos.x;
                 offset.y *= randomPos.y;
-                var position = randomPos + offset * camera.orthographicSize * 2f;
+                var position = randomPos + offset * camera.orthographicSize * 2.5f;
                 var goalPos = new Vector3(tileSize * x + xOffset, tileSize * y + yOffset, 0f);
 
                 var rot = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
                 var go = (GameObject)Instantiate(tiles[i], position, rot);
+                go.transform.localScale = new Vector3(tileSize, tileSize, 1f);
                 go.transform.SetParent(_tileParent, true);
-                var tile = go.AddComponent<Tile>().Init(goalPos);
+                var tile = go.GetComponentInChildren<Tile>().Init(goalPos);
                 tileList.Add(tile);
             }
         }
@@ -76,6 +77,10 @@ public class TileSpawner : MonoBehaviour
         {
             tile.MoveToGoalPosition(_config.TileTweenDuration, _config.TileTweeningCurve, Random.Range(_config.TileTweenWaitInterval.x, _config.TileTweenWaitInterval.y));
         }
+
+        yield return new WaitForSeconds(_config.TileTweenDuration + _config.TileTweenWaitInterval.y);
+
+        GameLogic.Instance.StartTileTimer();
 
         yield return null;
     }
