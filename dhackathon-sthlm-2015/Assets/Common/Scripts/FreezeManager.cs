@@ -24,7 +24,6 @@ public class FreezeManager : MonoBehaviour
 
     public void Freeze(bool screenShakeAfter, float duration)
     {
-        MusicController.Instance.StartFadeIn(duration);
         StartCoroutine(StartFreeze(screenShakeAfter, duration));
         _isFreezing = true;
     }

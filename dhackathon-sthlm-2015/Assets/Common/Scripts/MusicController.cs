@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class MusicController : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class MusicController : MonoBehaviour
     private float _minValue;
     [SerializeField]
     private float _maxValue;
-	[SerializeField]
+    [SerializeField]
+    private float _fadeSpeed;
+    [SerializeField]
     private AudioLowPassFilter _filter;
 
     private AudioSource _audio;
@@ -25,41 +28,57 @@ public class MusicController : MonoBehaviour
             return;
         }
 
+        Transition = 1f;
         Instance = this;
         _audio = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        //  Transition = Mathf.Clamp01(Transition);
+        Transition += _fadeSpeed * Time.deltaTime;
+        Transition = Mathf.Clamp01(Transition);
+        _filter.cutoffFrequency = Mathf.Lerp(_minValue, _maxValue, Transition);
     }
 
     public void StartFadeIn(float duration)
     {
-        DG.Tweening.DOTween.To(() => _filter.cutoffFrequency, x =>
-        {
-            _filter.cutoffFrequency = x;
-        }, _minValue, duration);
-        //  StartCoroutine(FadeIn(duration));
-        //  _fadingIn = true;
+        StartCoroutine(FadeIn(duration));
+        _fadingIn = true;
     }
 
     private IEnumerator FadeIn(float duration)
     {
-        //  if (_fadingIn)
+        if (_fadingIn)
+        {
+            yield break;
+        }
+		
+        //  var tween = DOTween.To(() => _filter.cutoffFrequency, x =>
         //  {
-        //      yield break;
-        //  }
+        //      _filter.cutoffFrequency = x;
+        //  }, _minValue, duration);
+        //  tween.timeScale = 1f;
+        //  tween.Play();
+
+        //  yield return tween.WaitForCompletion();
 
         var startTime = Time.unscaledTime;
-        var startTransition = Transition;
-
-        if (startTime + duration > Time.unscaledTime)
+        while (startTime + duration >= Time.unscaledTime)
         {
             var t = (Time.unscaledTime - startTime) / duration;
+            Transition = Mathf.Lerp(1f, 0f, t);
+            var lowPassValue = Mathf.Lerp(_minValue, _maxValue, Transition);
+        	_filter.cutoffFrequency = lowPassValue;
+            yield return null;
+        }
+
+        startTime = Time.unscaledTime;
+        while (startTime + _fadeSpeed >= Time.unscaledTime)
+        {
+    		var t = (Time.unscaledTime - startTime) / duration;
             Transition = Mathf.Lerp(0f, 1f, t);
-            var lowPassValue = Mathf.Lerp(_maxValue, _minValue, Transition);
-			_filter.cutoffFrequency = lowPassValue;
+            var lowPassValue = Mathf.Lerp(_minValue, _maxValue, Transition);
+        	_filter.cutoffFrequency = lowPassValue;
             yield return null;
         }
 

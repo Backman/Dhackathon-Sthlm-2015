@@ -46,6 +46,7 @@ public class Shield : MonoBehaviour
 			ball.MultiplySpeed(transform.up, _bashState.SpeedMultiplier);
             float duration = ball.Velocity.magnitude * 0.01f;
             duration = Mathf.Min(duration, 1f);
+            MusicController.Instance.StartFadeIn(duration / 2f);
             FreezeManager.Instance.Freeze(false, duration);
             ScreenShaker.Instance.ScreenShake(duration);
             _bashState.Valid = false;
