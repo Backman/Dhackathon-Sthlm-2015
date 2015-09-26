@@ -19,14 +19,6 @@ public class TileSpawner : MonoBehaviour
         Spawn();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Spawn();
-        }
-    }
-
     public void Spawn()
     {
         StartCoroutine(SpawnTiles());
