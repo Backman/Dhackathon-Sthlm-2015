@@ -83,7 +83,7 @@ public class PulsePillar : MonoBehaviour
 
         yield return new WaitForSeconds(_waitTime);
 
-        offsetTween = DOTween.To(() => currentOffset, x => { 
+        offsetTween = DOTween.To(() => _pulseRadius, x => { 
 			currentOffset = x;
 			SetOffset(currentOffset, _distortIntensity * Mathf.Clamp01(x));
 			}, 0f, _retractionSpeed);
