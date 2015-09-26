@@ -11,6 +11,10 @@ public class GameLogic : MonoBehaviour
 
 	[SerializeField]
     private GameConfig _config;
+
+    [SerializeField]
+    private GameObject _gameplayObject;
+
     private int _currentTileDropSetting;
     private float _tileDropTime;
     private bool _tileTimerStarted;
@@ -24,6 +28,9 @@ public class GameLogic : MonoBehaviour
         }
 
         Instance = this;
+
+        if(_gameplayObject != null)
+            _gameplayObject.SetActive(false);
     }
 
     private void Update()
@@ -56,6 +63,9 @@ public class GameLogic : MonoBehaviour
     {
         _tileTimerStarted = true;
         SetTileDropTime();
+
+        if(_gameplayObject != null)
+            _gameplayObject.SetActive(true);
     }
 
     private void SetTileDropTime()

@@ -78,7 +78,7 @@ public class TileSpawner : MonoBehaviour
             tile.MoveToGoalPosition(_config.TileTweenDuration, _config.TileTweeningCurve, Random.Range(_config.TileTweenWaitInterval.x, _config.TileTweenWaitInterval.y));
         }
 
-        yield return new WaitForSeconds(_config.TileTweenDuration);
+        yield return new WaitForSeconds(_config.TileTweenDuration + _config.TileTweenWaitInterval.y);
 
         GameLogic.Instance.StartTileTimer();
 
