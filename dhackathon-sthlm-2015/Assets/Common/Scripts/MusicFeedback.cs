@@ -9,6 +9,8 @@ public class MusicFeedback : MonoBehaviour
     [SerializeField]
     Shape m_shape;
 
+    public float m_lowIntensity {get; private set; }
+
     private List<Shape> m_shapes = new List<Shape>();
 
     private float m_freqMax;
@@ -78,7 +80,10 @@ public class MusicFeedback : MonoBehaviour
     {
         m_audioSource.GetSpectrumData(m_freqData, 0, FFTWindow.BlackmanHarris);
         float lowIntensity = IntensityOfRange(0f, m_freqMax * 0.1f) * 0.005f;
-        
+
+        // Storing the low intensity for use outside this script.
+        m_lowIntensity = lowIntensity;
+
         for (int i = 0; i < 256; ++i)
             m_offsets[i] = -0.2f + ((m_freqData[i + 150] + lowIntensity) * 30f);
         m_offsets[m_offsets.Length - 1] = m_offsets[0];
