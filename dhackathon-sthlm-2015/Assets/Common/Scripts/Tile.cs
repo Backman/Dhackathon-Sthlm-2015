@@ -23,7 +23,6 @@ public class Tile : MonoBehaviour
 
     public void RemoveTile()
     {
-        IsAlive = false;
         StartCoroutine(DropTile());
     }
 
@@ -37,7 +36,9 @@ public class Tile : MonoBehaviour
         transform.DOShakeRotation(duration);
         transform.DORotate(new Vector3(0f, 0f, 360f), duration);
 		
-        yield break;
+        yield return new WaitForSeconds(duration);
+		
+        IsAlive = false;
     }
 
     public void MoveToGoalPosition(float duration, AnimationCurve curve, float waitDuration)
@@ -49,8 +50,8 @@ public class Tile : MonoBehaviour
     {
         yield return new WaitForSeconds(waitDuration);
 		
-        var tween = transform.DOMove(_goalPosition, duration).SetEase(curve);
-        transform.DORotate(Vector3.zero, duration);
+        var tween = transform.parent.DOMove(_goalPosition, duration).SetEase(curve);
+        transform.parent.DORotate(Vector3.zero, duration);
 
         yield return tween.WaitForCompletion();
 		

@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 490656}
   - 61: {fileID: 6170438}
+  - 50: {fileID: 5012496}
+  - 114: {fileID: 11465182}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Tile
@@ -88,6 +90,22 @@ Transform:
   - {fileID: 448866}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5012496
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147568}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6170438
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -96,7 +114,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 147568}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -132,6 +150,17 @@ MonoBehaviour:
   - {r: .647058845, g: .0808823556, b: .467444062, a: 1}
   - {r: .705882311, g: .338623047, b: .00519031612, a: 1}
   - {r: .757352948, g: .611105502, b: 0, a: 1}
+--- !u!114 &11465182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0425e56a891624ea19d03ea7d953c3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11485198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,6 +357,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _dropColors.Array.data[4].b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
