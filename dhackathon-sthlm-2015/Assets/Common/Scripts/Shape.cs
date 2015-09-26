@@ -2,12 +2,10 @@
 
 public class Shape : MonoBehaviour
 {
-    [SerializeField]
-    private float m_distortFactor = 1.0f;
-
     private const float Tau = Mathf.PI * 2;
     private Vector3[] m_vertices;
-    private float[] m_offsets;
+	[HideInInspector]
+    public float[] m_offsets;
 
     private LinePrinter.DrawObject m_drawObject;
     private LinePrinter m_printer;
@@ -26,13 +24,19 @@ public class Shape : MonoBehaviour
         GenerateShape();
     }
 
+    public void AddOffset(float[] offsets)
+    {
+		if(offsets.Length != m_resolution) return;
+        for (int i = 0; i < offsets.Length; ++i)
+        {
+            m_offsets[i] += offsets[i];
+        }
+    }
+
     public void SetOffset(float[] offsets)
     {
         if (offsets.Length != m_resolution) return;
         m_offsets = offsets;
-
-        for(int i = 0; i < m_offsets.Length; ++i)
-            m_offsets[i] *= m_distortFactor;
     }
 
     private void Update ()

@@ -103,9 +103,10 @@ public class MusicFeedback : MonoBehaviour
             var offsets = shape.Offsets;
             for (int i = 0; i < offsets.Length; ++i)
 			{
-                float rand = shape.Randomness ? Random.Range(0.3f, 1.7f) : 1f;
-                offsets[i] = -0.2f + ((m_freqData[i + 150] * rand + lowIntensity * shape.Intensity) * 30f);
-			}
+                var rand = shape.Randomness ? Random.Range(0.4f, 0.8f) : 1f;
+                offsets[i] = -0.2f + ((m_freqData[i + 150] + lowIntensity) * 30f);
+                offsets[i] *= shape.Intensity;
+            }
        		offsets[offsets.Length - 1] = offsets[0];
             shape.Shape.SetOffset(offsets);
         }

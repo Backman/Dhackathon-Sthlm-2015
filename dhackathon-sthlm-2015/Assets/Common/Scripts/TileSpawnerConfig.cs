@@ -5,6 +5,7 @@ public class TileSpawnerConfig : ScriptableObject
 {
     public int Width;
     public int Height;
+    public Vector2 Offset;
     public int TileSize;
     public float TileTweenDuration;
     public float TimeUntilTileTweening;
