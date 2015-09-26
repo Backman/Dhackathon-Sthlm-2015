@@ -11,6 +11,7 @@ public class Shape : MonoBehaviour
     private LinePrinter m_printer;
 
     public GeometryType m_geometryType = GeometryType.Circle;
+    private GeometryType m_prevType = GeometryType.Circle;
     public int m_resolution = 1024;
     public Color m_color = Color.white;
 
@@ -33,6 +34,12 @@ public class Shape : MonoBehaviour
     {
         if(m_vertices.Length <= 0)
             return;
+        // If someone changed the enum type, generate a new shape.
+        if(m_geometryType != m_prevType)
+        {
+            m_prevType = m_geometryType;
+            GenerateShape();
+        }
 
         var scale = Matrix4x4.Scale(transform.localScale);
         var rotation = transform.rotation;
@@ -103,7 +110,7 @@ public class Shape : MonoBehaviour
         for (int i = 0; i < pointsInCircle; ++i)
         {
             float theta = Tau * i / pointsInCircle;
-            m_vertices[i] = new Vector3(Mathf.Cos(theta), Mathf.Sin(theta), transform.position.z);
+            m_vertices[i] = new Vector3(Mathf.Cos(theta), Mathf.Sin(theta), transform.position.z) * 0.5f;
         }
         m_vertices[m_vertices.Length - 1] = m_vertices[0];
     }

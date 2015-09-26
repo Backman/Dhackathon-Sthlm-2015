@@ -123,7 +123,7 @@
 			{
 				float2 uv = i.texcoord0;
 	
-				float signal = 0.5 + 0.5*sin(uv.x + sin(uv.y) )*sin(uv.y + sin(uv.x+_Time.y) ) + _rythm * 0.02;
+				float signal = 0.5 + 0.5*sin(uv.x + sin(uv.y) )*sin(uv.y + sin(uv.x+_Time.y) ) + _rythm * 40;
 				
 				// pack float to 8 bit float4
 				float4 pa = pack_F1_UB4( signal );
