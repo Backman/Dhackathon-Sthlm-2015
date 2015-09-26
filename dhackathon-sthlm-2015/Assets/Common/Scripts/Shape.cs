@@ -5,6 +5,8 @@ public class Shape : MonoBehaviour
     private const float Tau = Mathf.PI * 2;
 
     private Vector3[] m_vertices;
+    private float[] m_offsets;
+
     private LinePrinter.DrawObject m_drawObject;
     private LinePrinter m_printer;
 
@@ -16,8 +18,15 @@ public class Shape : MonoBehaviour
     {
         m_printer = Camera.main.GetComponent<LinePrinter>();
         m_vertices = new Vector3[m_resolution];
+        m_offsets = new float[m_resolution];
         m_drawObject = new LinePrinter.DrawObject(new Vector3[m_resolution], m_color);
         GenerateShape();
+    }
+
+    public void SetOffset(float[] offsets)
+    {
+        if (offsets.Length != m_resolution) return;
+        m_offsets = offsets;
     }
 
     private void Update ()
@@ -32,7 +41,7 @@ public class Shape : MonoBehaviour
         // TODO: Try make this parallell. :)
         for (int i = 0; i < m_vertices.Length; ++i)
         {
-            m_drawObject.List[i] = scale * m_vertices[i];
+            m_drawObject.List[i] = scale * m_vertices[i] * (1.0f + m_offsets[i]);
             m_drawObject.List[i] = rotation * m_drawObject.List[i];
             m_drawObject.List[i] += position;
         }
@@ -64,26 +73,6 @@ public class Shape : MonoBehaviour
     {
         if(m_vertices.Length <= 0)
             return;
-
-        // 0.75 = 1^2 - (1 / 2)^2
-        var height = Mathf.Sqrt(0.75f);
-        var verticesPerSide = m_vertices.Length / 3;
-        var space = 1f / verticesPerSide;
-        var right = new Vector3(0,-1,0);
-        var offset = new Vector3(0, -height / 2, 0);
-        
-        var dir1 = new Vector3(0, height, 0) - new Vector3(-0.5f,0,0);
-        var dir2 = new Vector3(0.5f, 0, 0) - new Vector3(0,height,0);
-
-
-        for(int i = 0; i < verticesPerSide; ++i)
-        {
-            m_vertices[i] = new Vector3(0.5f - i * space, 0, transform.position.z) + offset;
-            m_vertices[i + verticesPerSide] = dir1 * i * space + new Vector3(-0.5f, 0, transform.position.z) + offset;
-            m_vertices[i + verticesPerSide * 2] = dir2 * i * space + new Vector3(0, height, transform.position.z) + offset;
-        }
-
-        m_vertices[m_vertices.Length-1] = m_vertices[0];
     }
 
     private void Circle()
@@ -97,6 +86,7 @@ public class Shape : MonoBehaviour
             float theta = Tau * i / pointsInCircle;
             m_vertices[i] = new Vector3(Mathf.Cos(theta), Mathf.Sin(theta), transform.position.z);
         }
+        m_vertices[m_vertices.Length - 1] = m_vertices[0];
     }
 
     private void Square()
