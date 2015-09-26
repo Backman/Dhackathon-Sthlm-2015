@@ -6,12 +6,21 @@ using System.Collections.Generic;
 
 public class MusicFeedback : MonoBehaviour 
 {
+    private struct ActiveShape
+    {
+        public Shape Shape;
+        public float[] Offsets;
+        public float Intensity;
+        public bool Randomness;
+        public string ID;
+    }
+
     [SerializeField]
     Shape m_shape;
 
-    public float m_lowIntensity {get; private set; }
+    public float m_lowIntensity { get; private set; }
 
-    private List<Shape> m_shapes = new List<Shape>();
+    private Dictionary<string, ActiveShape> _shapes = new Dictionary<string, ActiveShape>();
 
     private float m_freqMax;
     private float[] m_freqData;
@@ -19,8 +28,6 @@ public class MusicFeedback : MonoBehaviour
     private int m_samples = 1024;
 
     private AudioSource m_audioSource;
-
-    private float[] m_offsets;
 
     void Awake()
     {
@@ -31,18 +38,25 @@ public class MusicFeedback : MonoBehaviour
 	void Start ()
     {
         m_freqData = new float[m_samples];
-        m_offsets = new float[256];
         m_freqMax = AudioSettings.outputSampleRate / 2.0f;
 	}
 
-    public void AddShape(Shape shape)
+    public void AddShape(Shape shape, string id, float intensity, bool randomness)
     {
-        m_shapes.Add(shape);
+        var activeShape = new ActiveShape()
+        {
+            Shape = shape,
+            Offsets = new float[shape.m_resolution],
+            Intensity = intensity,
+			Randomness = randomness,
+        	ID = id
+    	};
+        _shapes.Add(id, activeShape);
     }
 
-    public void RemoveShape(Shape shape)
+    public void RemoveShape(string id)
     {
-        m_shapes.Remove(shape);
+        _shapes.Remove(id);
     }
 
     private float IntensityOfRange(float freqLow, float freqHigh)
@@ -84,14 +98,16 @@ public class MusicFeedback : MonoBehaviour
         // Storing the low intensity for use outside this script.
         m_lowIntensity = lowIntensity;
 
-        for (int i = 0; i < 256; ++i)
-            m_offsets[i] = -0.2f + ((m_freqData[i + 150] + lowIntensity) * 30f);
-        m_offsets[m_offsets.Length - 1] = m_offsets[0];
-
-        for(int i = 0; i < m_shapes.Count; ++i)
-            m_shapes[i].SetOffset(m_offsets);
-
-        if (m_shape != null)
-            m_shape.SetOffset(m_offsets);
+        foreach (var shape in _shapes.Values)
+        {
+            var offsets = shape.Offsets;
+            for (int i = 0; i < offsets.Length; ++i)
+			{
+                float rand = shape.Randomness ? Random.Range(0.3f, 1.7f) : 1f;
+                offsets[i] = -0.2f + ((m_freqData[i + 150] * rand + lowIntensity * shape.Intensity) * 30f);
+			}
+       		offsets[offsets.Length - 1] = offsets[0];
+            shape.Shape.SetOffset(offsets);
+        }
 	}
 }
