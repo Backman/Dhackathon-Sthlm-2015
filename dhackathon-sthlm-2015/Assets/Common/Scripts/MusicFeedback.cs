@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class MusicFeedback : MonoBehaviour 
 {
+    private static MusicFeedback _instance;
+
     private struct ActiveShape
     {
         public Shape Shape;
@@ -31,6 +33,15 @@ public class MusicFeedback : MonoBehaviour
 
     void Awake()
     {
+        if(_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+        _instance = this;
+
         m_audioSource = GetComponent<AudioSource>();
     }
 
