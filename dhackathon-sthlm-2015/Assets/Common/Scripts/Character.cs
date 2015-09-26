@@ -15,9 +15,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float _movementSpeed = 3f;
     [SerializeField]
-    private float _pushbackRecover = 0.4f;
-    [SerializeField]
-    private AnimationCurveConfig _knockbackCurve;
+    private KnockbackConfig _knockbackConfig;
 
     private Rigidbody2D _rb;
     private Vector2 _movement;
@@ -81,19 +79,19 @@ public class Character : MonoBehaviour
 
     private IEnumerator Knockback()
     {
-        AnimationCurve curve = _knockbackCurve.Curve;
+        AnimationCurve curve = _knockbackConfig.Curve;
+        float length = Mathf.Min(_knockbackState.Length, _knockbackConfig.MaxLength);
         Vector3 startPos = transform.position;
-        Vector3 endPos = transform.position + _knockbackState.Direction * _knockbackState.Length;
+        Vector3 endPos = transform.position + _knockbackState.Direction * length;
 
         float totalDistance = Vector3.Distance(startPos, endPos);
-        float currentDistance = totalDistance - 0.01f;
+        float currentDistance = totalDistance * 0.98f;
 
         while (currentDistance > 0.001f)
         {
             float t = 1.0f - (currentDistance / totalDistance);
             transform.position = Vector3.Lerp(startPos, endPos, curve.Evaluate(t));
             currentDistance = Vector3.Distance(transform.position, endPos);
-            Debug.LogFormat("Dist {0}, t {1}", currentDistance, t);
             yield return null;
         }
 

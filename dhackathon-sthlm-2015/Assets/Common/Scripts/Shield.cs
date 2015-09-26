@@ -45,7 +45,8 @@ public class Shield : MonoBehaviour
         else
         {
 			ball.MultiplySpeed(transform.up, _bashState.SpeedMultiplier);
-			_bashState.Valid = false;
+            FreezeManager.Instance.Freeze(true);
+            _bashState.Valid = false;
         }
     }
 
