@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bounce: {fileID: 8300000, guid: 5abd9b2b37c01d64fa8c0b03e6736f0b, type: 3}
+  _bash: {fileID: 8300000, guid: a90a73efd62a6d443a9438b640fc279f, type: 3}
 --- !u!114 &11417474
 MonoBehaviour:
   m_ObjectHideFlags: 1

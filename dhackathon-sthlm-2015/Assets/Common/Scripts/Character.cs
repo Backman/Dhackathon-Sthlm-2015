@@ -15,6 +15,11 @@ public class Character : MonoBehaviour
     [SerializeField]
     private CharacterConfig _config;
 
+    [SerializeField]
+    private AudioClip _death;
+
+    private AudioSource _audioSource;
+
     private int _health;
 
     private Rigidbody2D _rb;
@@ -33,6 +38,7 @@ public class Character : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _shape = GetComponent<Shape>();
+        _audioSource = GetComponent<AudioSource>();
         _health = _config.Health;
         _knockbackConfig = _config.KnockbackConfig;
     }
@@ -91,6 +97,12 @@ public class Character : MonoBehaviour
         //Destroy(gameObject, duration);
 
         StartCoroutine(RestartGame(duration));
+
+        if (_audioSource != null && _death != null)
+        {
+            _audioSource.clip = _death;
+            _audioSource.Play();
+        }
     }
 
     private IEnumerator RestartGame(float duration)

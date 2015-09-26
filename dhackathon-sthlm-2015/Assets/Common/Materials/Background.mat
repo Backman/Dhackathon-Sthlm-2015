@@ -93,6 +93,38 @@ Material:
         second: .5
       data:
         first:
+          name: _dist
+        second: 5.0999999
+      data:
+        first:
+          name: _zoom
+        second: 39.8300018
+      data:
+        first:
+          name: _speed
+        second: 20.7999992
+      data:
+        first:
+          name: _rythm
+        second: .00372868474
+      data:
+        first:
+          name: _width
+        second: 669
+      data:
+        first:
+          name: _height
+        second: 436
+      data:
+        first:
+          name: _posx
+        second: -3.1400001
+      data:
+        first:
+          name: _posy
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -127,38 +159,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _dist
-        second: 5.0999999
-      data:
-        first:
-          name: _zoom
-        second: 39.8300018
-      data:
-        first:
-          name: _speed
-        second: 20.7999992
-      data:
-        first:
-          name: _rythm
-        second: .00967488717
-      data:
-        first:
-          name: _width
-        second: 1179
-      data:
-        first:
-          name: _height
-        second: 663
-      data:
-        first:
-          name: _posx
-        second: -3.1400001
-      data:
-        first:
-          name: _posy
-        second: 1
       data:
         first:
           name: _scaleh

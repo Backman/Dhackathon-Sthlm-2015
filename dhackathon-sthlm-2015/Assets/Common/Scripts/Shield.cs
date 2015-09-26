@@ -12,6 +12,9 @@ public class Shield : MonoBehaviour
     [SerializeField]
     private AudioClip _bounce;
 
+    [SerializeField]
+    private AudioClip _bash;
+
     private AudioSource _audioSource;
 
     private Character _character;
@@ -61,6 +64,12 @@ public class Shield : MonoBehaviour
             FreezeManager.Instance.Freeze(false, duration);
             ScreenShaker.Instance.ScreenShake(duration);
             _bashState.Valid = false;
+
+            if (_audioSource != null && _bash != null)
+            {
+                _audioSource.clip = _bash;
+                _audioSource.Play();
+            }
         }
     }
 
