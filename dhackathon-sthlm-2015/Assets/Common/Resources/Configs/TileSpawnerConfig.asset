@@ -11,8 +11,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7981d2cb27c1649bfbe64f3c246f3b3a, type: 3}
   m_Name: TileSpawnerConfig
   m_EditorClassIdentifier: 
-  Width: 64
-  Height: 64
-  TileSize: 1
+  Width: 25
+  Height: 20
+  TileSize: 6
+  TileTweenDuration: .300000012
+  TimeUntilTileTweening: 1
+  TileTweenWaitInterval: {x: 1.29999995, y: 1.60000002}
+  TileTweeningCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - time: .137893885
+      value: .777317405
+      inSlope: 3.85444689
+      outSlope: 3.85444689
+      tangentMode: 10
+    - time: .281502634
+      value: 1.07484949
+      inSlope: -.163750648
+      outSlope: -.163750648
+      tangentMode: 10
+    - time: .356217414
+      value: .895584404
+      inSlope: -.0107288361
+      outSlope: -.0107288361
+      tangentMode: 0
+    - time: .575155914
+      value: .987085581
+      inSlope: 1.43537188
+      outSlope: 1.43537188
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: .476008058
+      outSlope: .476008058
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
   Tiles:
   - {fileID: 147568, guid: 12405583dad8141c7b539bd0e058fd45, type: 2}
