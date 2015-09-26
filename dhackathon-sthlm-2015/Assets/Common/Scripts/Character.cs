@@ -88,7 +88,15 @@ public class Character : MonoBehaviour
             Instantiate(_config.DeathParticle, transform.position, transform.rotation);
         }
 
-        Destroy(gameObject, duration);
+        //Destroy(gameObject, duration);
+
+        StartCoroutine(RestartGame(duration));
+    }
+
+    private IEnumerator RestartGame(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Application.LoadLevel(0);
     }
 
     private IEnumerator FadeColor(float duration)

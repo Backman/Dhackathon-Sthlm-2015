@@ -7,9 +7,12 @@ public class LinePrinter : MonoBehaviour
     {
         public DrawObject(Vector3[] l, Color c)
         {
+            Trs = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
             List = l;
             Color = c;
         }
+        
+        public Matrix4x4 Trs;
         public Vector3[] List;
         public Color Color;
     }

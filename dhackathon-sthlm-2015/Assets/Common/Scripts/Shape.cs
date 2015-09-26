@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Threading;
 
 public class Shape : MonoBehaviour
 {
@@ -54,10 +55,9 @@ public class Shape : MonoBehaviour
         var rotation = transform.rotation;
         var position = transform.position;
 
-        // TODO: Try make this parallell. :)
         for (int i = 0; i < m_vertices.Length; ++i)
         {
-            if(m_geometryType == GeometryType.Line)
+            if (m_geometryType == GeometryType.Line)
             {
                 m_drawObject.List[i] = scale * m_vertices[i];
                 m_drawObject.List[i].y += m_offsets[i];
