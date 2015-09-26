@@ -82,6 +82,8 @@ public class Character : MonoBehaviour
 
     public void Kill()
     {
+        if (!_isAlive) return;
+
         var duration = 1f;
         var intensity = 0.3f;
         ShapeDistorter.Instance.AddDistort(_shape, intensity, duration);
@@ -95,7 +97,11 @@ public class Character : MonoBehaviour
         }
 
         //Destroy(gameObject, duration);
-
+        if(PlayerValue == Player.PlayerTwo)
+            GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>().AddScoreOne();
+        else if (PlayerValue == Player.PlayerOne)
+            GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>().AddScoreTwo();
+        
         StartCoroutine(RestartGame(duration));
 
         if (_audioSource != null && _death != null)
