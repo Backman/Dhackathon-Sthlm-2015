@@ -57,8 +57,17 @@ public class Shape : MonoBehaviour
         // TODO: Try make this parallell. :)
         for (int i = 0; i < m_vertices.Length; ++i)
         {
-            m_drawObject.List[i] = scale * m_vertices[i] * (1.0f + m_offsets[i]);
+            if(m_geometryType == GeometryType.Line)
+            {
+                m_drawObject.List[i] = scale * m_vertices[i];
+                m_drawObject.List[i].y += m_offsets[i];
+            }
+            else
+            {
+                m_drawObject.List[i] = scale * m_vertices[i] * (1.0f + m_offsets[i]);
+            }
             m_drawObject.List[i] = rotation * m_drawObject.List[i];
+
             m_drawObject.List[i] += position;
         }
         m_drawObject.Color = m_color;
@@ -91,7 +100,7 @@ public class Shape : MonoBehaviour
 
     private void Line()
     {
-        var space = 1f / m_vertices.Length;
+        var space = 1f / (m_vertices.Length - 1);
 
         for(int i = 0; i < m_vertices.Length; ++i)
         {

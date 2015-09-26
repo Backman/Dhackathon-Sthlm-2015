@@ -56,6 +56,9 @@ public class Character : MonoBehaviour
         }
 
         _rb.rotation = _angle;
+
+        Vector3 pos = _rb.position;
+        _rb.position = new Vector3(Mathf.Clamp(pos.x, -82, 82), Mathf.Clamp(pos.y, -42, 42), 0);
     }
 
     public void TakeDamage(int amount)
@@ -109,9 +112,9 @@ public class Character : MonoBehaviour
         _movement.y = Input.GetAxisRaw(vert);
 
         Vector2 rot;
-        rot.x = Input.GetAxis(xRot);
+        rot.x = Input.GetAxisRaw(xRot);
         rot.y = Input.GetAxisRaw(yRot);
-        if (rot.sqrMagnitude > 0f)
+        if (rot.sqrMagnitude > 0.2f)
         {
             _angle = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
             _angle -= 90f;
