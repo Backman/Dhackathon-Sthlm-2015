@@ -10,5 +10,6 @@ public enum GeometryType
     InvalidType,
     Circle,
     Square,
-    Triangle
+    Triangle,
+    Line,
 }

@@ -3,7 +3,7 @@
 public class Shape : MonoBehaviour
 {
     private const float Tau = Mathf.PI * 2;
-
+    [SerializeField]
     private Vector3[] m_vertices;
     private float[] m_offsets;
 
@@ -70,9 +70,22 @@ public class Shape : MonoBehaviour
             case GeometryType.Triangle:
                 Triangle();
                 break;
+            case GeometryType.Line:
+                Line();
+                break;
             default:
                 Debug.LogError("Error in Shape.cs - Geometry shape unknown.");
                 break;
+        }
+    }
+
+    private void Line()
+    {
+        var space = 1f / m_vertices.Length;
+
+        for(int i = 0; i < m_vertices.Length; ++i)
+        {
+            m_vertices[i] = new Vector3(-0.5f + i * space, 0, transform.position.z);
         }
     }
 
