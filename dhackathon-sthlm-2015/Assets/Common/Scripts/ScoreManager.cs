@@ -26,14 +26,18 @@ public class ScoreManager : MonoBehaviour
         {
             GameObject point = GameObject.Instantiate<GameObject>(_pointObject);
             point.transform.parent = _playerOne;
-            point.transform.localPosition = new Vector3(i * 10, 0, 0);
+            int x = i % 5;
+            int y = i / 5;
+            point.transform.localPosition = new Vector3(x * 10, y * -10, 0);
             point.transform.localScale = new Vector3(5, 1, 1);
         }
         for(int i = 0; i < _scoreTwo; ++i)
         {
             GameObject point = GameObject.Instantiate<GameObject>(_pointObject);
             point.transform.parent = _playerTwo;
-            point.transform.localPosition = new Vector3(i * -10, 0, 0);
+            int x = i % 5;
+            int y = i / 5;
+            point.transform.localPosition = new Vector3(x * -10, y * -10, 0);
             point.transform.localScale = new Vector3(5, 1, 1);
         }
     }

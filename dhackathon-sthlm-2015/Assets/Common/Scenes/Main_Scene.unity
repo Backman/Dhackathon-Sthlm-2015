@@ -128,10 +128,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11432496, guid: 6f158df3da7df4e2daa095b1de2f2ddd, type: 2}
-      propertyPath: _fadeSpeed
-      value: .100000001
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f158df3da7df4e2daa095b1de2f2ddd, type: 2}
   m_IsPrefabParent: 0
@@ -235,11 +231,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -40
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -723,11 +719,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -30
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -889,11 +885,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -935,11 +931,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -40
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -30
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 442030, guid: 829fab658d4a643d1adcd2d705ebc0fa, type: 2}
       propertyPath: m_LocalPosition.z

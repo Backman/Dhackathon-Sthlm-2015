@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using DG.Tweening;
 
 public class MusicController : MonoBehaviour
 {
@@ -42,7 +41,7 @@ public class MusicController : MonoBehaviour
 
     public void StartFadeIn(float duration)
     {
-        StartCoroutine(FadeIn(duration));
+        //  StartCoroutine(FadeIn(duration));
         _fadingIn = true;
     }
 
