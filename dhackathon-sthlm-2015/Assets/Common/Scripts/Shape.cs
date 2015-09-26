@@ -73,6 +73,24 @@ public class Shape : MonoBehaviour
     {
         if(m_vertices.Length <= 0)
             return;
+
+        // 0.75 = 1^2 - (1 / 2)^2
+        var height = Mathf.Sqrt(0.75f);
+        var verticesPerSide = m_vertices.Length / 3;
+        var space = 1f / verticesPerSide;
+        var offset = new Vector3(0, -height / 2, 0);
+        
+        var dir1 = new Vector3(0, height, 0) - new Vector3(-0.5f,0,0);
+        var dir2 = new Vector3(0.5f, 0, 0) - new Vector3(0,height,0);
+
+        for(int i = 0; i < verticesPerSide; ++i)
+        {
+            m_vertices[i] = new Vector3(0.5f - i * space, 0, transform.position.z) + offset;
+            m_vertices[i + verticesPerSide] = dir1 * i * space + new Vector3(-0.5f, 0, transform.position.z) + offset;
+            m_vertices[i + verticesPerSide * 2] = dir2 * i * space + new Vector3(0, height, transform.position.z) + offset;
+        }
+
+        m_vertices[m_vertices.Length-1] = m_vertices[0];
     }
 
     private void Circle()
@@ -104,5 +122,6 @@ public class Shape : MonoBehaviour
             m_vertices[i + verticesPerSide * 2] = new Vector3(0.5f - i * space,-0.5f, transform.position.z);
             m_vertices[i + verticesPerSide * 3] = new Vector3(-0.5f, -0.5f + i * space, transform.position.z);
         }
+        m_vertices[m_vertices.Length - 1] = m_vertices[0];
     }
 }
