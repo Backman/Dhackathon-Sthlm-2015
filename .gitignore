@@ -29,3 +29,5 @@ sysinfo.txt
 .vscode
 
 dhackathon-sthlm-2015/Assets/UnityVS.meta
+
+*.asset
